@@ -6,7 +6,6 @@ services:
     ports:
       - 8000:8000
     restart: on-failure
-    environment:
     env_file:
       - .env
     volumes:
