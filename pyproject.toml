@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "password-manager"
+version = "0.1.0"
+description = "a password manager for saving passwords"
+authors = ["0x1byte"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.0.3"
+pillow = "^10.2.0"
+django-pwa = "^1.1.0"
+dj-database-url = "^2.1.0"
+psycopg = "^3.1.18"
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "myproject.settings"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
