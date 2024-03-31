@@ -7,5 +7,5 @@ echo "Collecting static files..."
 poetry run python manage.py collectstatic --no-input
 
 echo "Starting server..."
-poetry run python manage.py runserver 0.0.0.0:8000
+poetry run gunicorn --env DJANGO_SETTINGS_MODULE=config.settings.prod password_manager.wsgi --bind 0.0.0.0:8000
 
