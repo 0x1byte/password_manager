@@ -10,8 +10,8 @@ services:
       - .env
     volumes:
       - .:/app
-      - media:/app/media
-      - static:/app/static
+      - ./media:/app/media
+      - ./static:/app/static
   postgres:
     image: postgres
     restart: always
@@ -27,8 +27,8 @@ services:
       - 80:80
       - 1337:443
     volumes:
-      - media:/app/media
-      - static:/app/static
+      - ./media:/app/media
+      - ./static:/app/static
       - /root/cert/:/etc/nginx/cert
     depends_on:
       - web
@@ -36,6 +36,4 @@ services:
 
 volumes:
   postgresdata:
-  media:
-  static:
   
