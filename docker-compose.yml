@@ -11,7 +11,7 @@ services:
     volumes:
       - .:/app
       - media:/app/media
-      - static:/app/static
+      - static:/app/staticfiles
   postgres:
     image: postgres
     restart: always
@@ -28,7 +28,7 @@ services:
       - 1337:443
     volumes:
       - media:/app/media
-      - static:/app/static
+      - static:/app/staticfiles
       - /root/cert/:/etc/nginx/cert
     depends_on:
       - web
